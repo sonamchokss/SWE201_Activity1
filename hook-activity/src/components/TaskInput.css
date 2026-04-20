@@ -1,0 +1,119 @@
+.task-input-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.title-field {
+  position: relative;
+}
+
+.title-field input {
+  width: 100%;
+  border: 1px solid rgba(128, 143, 229, 0.45);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.58);
+  color: var(--text);
+  padding: 1.05rem 0.9rem 0.62rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.app-shell.dark .title-field input {
+  background: rgba(26, 36, 71, 0.66);
+}
+
+.title-field input:focus {
+  border-color: rgba(79, 111, 255, 0.85);
+  box-shadow: 0 0 0 3px rgba(96, 123, 255, 0.2);
+}
+
+.title-field label {
+  position: absolute;
+  left: 0.72rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted-text);
+  font-size: 0.92rem;
+  background: transparent;
+  padding: 0 0.2rem;
+  transition: top 0.2s ease, font-size 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+}
+
+.title-field input:focus + label,
+.title-field.filled label {
+  top: 0.36rem;
+  transform: translateY(0);
+  font-size: 0.72rem;
+}
+
+.task-form-controls {
+  display: grid;
+  gap: 0.62rem;
+  grid-template-columns: 170px 1fr auto;
+}
+
+.task-form-controls select,
+.task-form-controls button {
+  border-radius: 10px;
+  border: 1px solid transparent;
+  padding: 0.66rem 0.8rem;
+  font-size: 0.95rem;
+}
+
+.task-form-controls select {
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--text);
+  border-color: rgba(128, 143, 229, 0.42);
+  outline: none;
+}
+
+.app-shell.dark .task-form-controls select {
+  background: rgba(26, 36, 71, 0.66);
+}
+
+.add-task-btn {
+  border: none;
+  color: #ffffff;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(120deg, #4a63ff, #3aa0ff);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.add-task-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(56, 107, 255, 0.35);
+}
+
+.clear-title-btn {
+  color: var(--text);
+  border-color: rgba(126, 141, 231, 0.45);
+  background: rgba(255, 255, 255, 0.38);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.clear-title-btn:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.58);
+}
+
+.app-shell.dark .clear-title-btn {
+  background: rgba(26, 36, 71, 0.55);
+}
+
+.task-preview {
+  color: var(--muted-text);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 760px) {
+  .task-form-controls {
+    grid-template-columns: 1fr;
+  }
+}
